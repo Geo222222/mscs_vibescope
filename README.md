@@ -85,9 +85,6 @@ This project was developed as part of the Full Sail University Master of Science
 - Test-driven development
 
 ## Author
-[Your Name]
+Djuvane Martin 
 Full Sail University
 Master of Science in Computer Science
-
-## License
-[Your chosen license]
