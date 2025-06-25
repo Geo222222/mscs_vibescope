@@ -1,5 +1,5 @@
 import numpy as np
-from app.config import BUFFER_SIZE
+from config.config import BUFFER_SIZE
 
 class FFTProcessor:
     def process(self, audio_data):

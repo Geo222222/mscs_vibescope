@@ -1,6 +1,6 @@
 import sounddevice as sd
 import numpy as np
-from app.config import SAMPLE_RATE, BUFFER_SIZE
+from config.config import SAMPLE_RATE, BUFFER_SIZE
 
 class AudioInput:
     def __init__(self):
@@ -8,7 +8,7 @@ class AudioInput:
         self.stream = sd.InputStream(
             samplerate=SAMPLE_RATE,
             blocksize=BUFFER_SIZE,
-            channels=1,
+            # channels=1,
             dtype=np.float32
         )
         self.stream.start()
@@ -28,3 +28,9 @@ class AudioInput:
         except Exception as e:
             print(f"🔴 Error capturing audio: {e}")
             return np.zeros(BUFFER_SIZE)
+
+    def close(self):
+        """Close the audio stream"""
+        if hasattr(self, 'stream') and self.stream:
+            self.stream.stop()
+            self.stream.close()

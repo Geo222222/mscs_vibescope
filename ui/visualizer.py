@@ -1,6 +1,6 @@
 import pygame
 import numpy as np
-from app.config import FFT_BINS
+from config.config import FFT_BINS
 
 class Visualizer:
     def __init__(self):
@@ -46,3 +46,7 @@ class Visualizer:
             int(255 * (1 - abs(magnitude - 0.5))),  # Green peaks at 0.5
             int(255 * (1 - magnitude))  # Blue
         )
+
+    def quit(self):
+        """Clean up and quit pygame"""
+        pygame.quit()
