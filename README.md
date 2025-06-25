@@ -43,7 +43,7 @@ VibeScope is a real-time audio visualization tool with intelligent mood detectio
 ## Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vibescope.git
+git clone https://github.com/geo222222/vibescope.git
 cd vibescope
 
 # Install dependencies
