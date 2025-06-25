@@ -28,7 +28,7 @@ VibeScope is a real-time audio visualization tool developed as part of the Full 
 ## Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vibescope.git
+git clone https://github.com/geo222222/vibescope.git
 cd vibescope
 
 # Install dependencies
