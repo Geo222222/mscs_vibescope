@@ -1,15 +1,30 @@
-# VibeScope - Real-Time Audio Visualization
+# VibeScope - Real-Time Audio Visualization with Mood Detection
 
 ## Overview
-VibeScope is a real-time audio visualization tool developed as part of the Full Sail University Master of Science in Computer Science program. This application captures audio input and creates dynamic visual representations of frequency spectrums using Fast Fourier Transform (FFT) analysis.
+VibeScope is a real-time audio visualization tool with intelligent mood detection, developed as part of the Full Sail University Master of Science in Computer Science program. This application captures audio input, analyzes emotional characteristics, and creates dynamic visual representations with mood-based color schemes.
 
-## Features
+## ✨ Features
+
+### Core Functionality
 - Real-time audio capture using sounddevice
 - FFT-based frequency analysis
 - Dynamic visualization using pygame
-- Color-gradient spectrum display
 - Logarithmic scaling for better frequency visualization
 - Configurable sample rate and buffer size
+
+### 🧠 Phase 2: Mood Detection Engine
+- **3 Detection Strategies**: Volume, Frequency, and Spectral analysis
+- **13+ Mood Types**: From "Calm" and "Chill" to "Hype" and "Chaotic"
+- **Real-time Analysis**: Mood updates 30 times per second
+- **Strategy Switching**: Change detection algorithms on-the-fly
+- **Confidence Tracking**: Reliability metrics for mood detection
+
+### 🎨 Mood-Based Visual Colors
+- **Dynamic Color Schemes**: 13 unique color themes for different moods
+- **Intelligent Color Mapping**: 3-layer gradient system (background → primary → secondary → accent)
+- **Real-time Color Updates**: Visual theme changes instantly with mood
+- **On-screen Mood Display**: Current mood shown in real-time
+- **Strategy-Specific Themes**: Different color schemes for each detection strategy
 
 ## Technical Specifications
 - **Sample Rate:** 44.1kHz (CD Quality)

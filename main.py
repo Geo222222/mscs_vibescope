@@ -18,7 +18,7 @@ def print_welcome():
 
 
 def main():
-    print_welcome()    
+    print_welcome()
     audio = AudioInput()
     fft = FFTProcessor()
     ui = Visualizer()
@@ -36,7 +36,8 @@ def main():
         fft_data = fft.process(chunk)
         
         # Analyze mood from frequency data
-        mood = mood_detector.analyze(fft_data)        
+        mood = mood_detector.analyze(fft_data)
+        
         # Display mood information periodically
         frame_count += 1
         if frame_count % mood_display_interval == 0:
@@ -44,7 +45,8 @@ def main():
             dominant_mood = mood_detector.get_dominant_mood()
             print(f"[Mood]: {mood} | Confidence: {confidence:.2f} | Dominant: {dominant_mood}")
         
-        ui.draw(fft_data)
+        # Draw visualization with mood-based colors
+        ui.draw(fft_data, mood)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

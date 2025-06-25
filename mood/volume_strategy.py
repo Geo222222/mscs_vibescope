@@ -16,8 +16,7 @@ class VolumeStrategy(MoodStrategy):
         Args:
             hype_threshold: Volume level above which mood is "Hype" (default: 0.15)
             chill_threshold: Volume level above which mood is "Chill" (default: 0.05)
-            
-        Note: Thresholds are optimized for FFT data normalized by max value.
+              Note: Thresholds are optimized for FFT data normalized by max value.
         Typical average values range from 0.01 (quiet) to 0.25 (very loud).
         """
         self.hype_threshold = hype_threshold
@@ -34,16 +33,6 @@ class VolumeStrategy(MoodStrategy):
         """
         # Calculate average volume across all frequency bins
         avg_volume = np.mean(fft_data)
-        
-        # Debug: Print actual volume values occasionally
-        if hasattr(self, '_debug_counter'):
-            self._debug_counter += 1
-        else:
-            self._debug_counter = 0
-            
-        if self._debug_counter % 30 == 0:  # Print every 30 frames (1 second)
-            max_vol = np.max(fft_data)
-            print(f"Debug - Avg: {avg_volume:.4f}, Max: {max_vol:.4f}, Thresholds: {self.chill_threshold:.2f}/{self.hype_threshold:.2f}")
         
         if avg_volume > self.hype_threshold:
             return "Hype"
