@@ -1,4 +1,4 @@
-# VibeScope - Real-Time Audio Visualization with Mood Detection
+ # VibeScope - Real-Time Audio Visualization with Mood Detection
 
 ## Overview
 VibeScope is a real-time audio visualization tool with intelligent mood detection, developed as part of the Full Sail University Master of Science in Computer Science program. This application captures audio input, analyzes emotional characteristics, and creates dynamic visual representations with mood-based color schemes.
@@ -82,14 +82,7 @@ mscs_vibescope/
 │   ├── test_fft_processor.py    # FFT processing tests
 │   ├── test_mood_detection.py   # Mood detection tests
 │   └── test_visualizer_moods.py # Visual mood tests
-├── docs/               # Technical documentation
-│   ├── phase2_mood_detection.md
-│   ├── mood_based_colors.md
-│   ├── sequence_diagram_realtime_processing.md
-│   ├── state_chart_audio_input.md
-│   ├── state_chart_application_lifecycle.md
-│   └── test_coverage_summary.md
-└── build/              # PyInstaller build artifacts
+└──              
 ```
 
 ## Key Components
