@@ -7,6 +7,7 @@ from mood.frequency_strategy import FrequencyStrategy
 from mood.spectral_strategy import SpectralStrategy
 from config.config import FPS
 import pygame
+import numpy as np
 
 def print_welcome():
     print("=" * 70)
@@ -37,13 +38,14 @@ def main():
         
         # Analyze mood from frequency data
         mood = mood_detector.analyze(fft_data)
-        
-        # Display mood information periodically
+          # Display mood information periodically
         frame_count += 1
         if frame_count % mood_display_interval == 0:
             confidence = mood_detector.get_mood_confidence()
             dominant_mood = mood_detector.get_dominant_mood()
-            print(f"[Mood]: {mood} | Confidence: {confidence:.2f} | Dominant: {dominant_mood}")
+            # Calculate average FFT magnitude for the dominant mood score
+            dominant_score = np.mean(fft_data)
+            print(f"[Mood]: {mood} | Confidence: {confidence:.2f} | Dominant: {dominant_mood} [{dominant_score:.4f}]")
         
         # Draw visualization with mood-based colors
         ui.draw(fft_data, mood)

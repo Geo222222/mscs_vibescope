@@ -7,19 +7,17 @@ from config.config import SAMPLE_RATE, BUFFER_SIZE
 class TestAudioInputFailures(unittest.TestCase):
     """Unit tests for AudioInput class - MODIFIED TO FAIL for educational purposes."""
     
-    def setUp(self):
-        """Set up test fixtures."""
-        # Mock sounddevice to avoid requiring actual audio hardware
-        self.mock_sd_patcher = patch('core.audio_input.sd')
-        self.mock_sd = self.mock_sd_patcher.start()
+    # def setUp(self):
+    #     """Set up test fixtures."""
+    #     # Mock sounddevice to avoid requiring actual audio hardware
+    #     self.mock_sd_patcher = patch('core.audio_input.sd')
+    #     self.mock_sd = self.mock_sd_patcher.start()
         
-        # Create mock stream
-        self.mock_stream = Mock()
-        self.mock_sd.InputStream.return_value = self.mock_stream
+    #     # Create mock stream
+    #     self.mock_stream = Mock()
+    #     self.mock_sd.InputStream.return_value = self.mock_stream
         
-    def tearDown(self):
-        """Clean up after tests."""
-        self.mock_sd_patcher.stop()
+
     
     def test_audio_input_initialization_FAIL(self):
         """Test AudioInput initializes correctly - MODIFIED TO FAIL."""

@@ -17,10 +17,6 @@ class TestAudioInput(unittest.TestCase):
         self.mock_stream = Mock()
         self.mock_sd.InputStream.return_value = self.mock_stream
         
-    def tearDown(self):
-        """Clean up after tests."""
-        self.mock_sd_patcher.stop()
-    
     def test_audio_input_initialization(self):
         """Test AudioInput initializes correctly."""
         audio_input = AudioInput()
